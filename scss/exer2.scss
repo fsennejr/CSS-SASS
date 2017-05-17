@@ -1,0 +1,182 @@
+// TRABALHANDO COM SELETORES
+
+// Variáveis de tamanho
+$width-full: 100%;
+$height-full: 100%;
+
+$width-center: $width-full - 10%;
+
+
+// Margins e Paddings
+$margin-zero: 0;
+$padding-zero:0;
+
+$margin-center: 0 auto;
+
+// Backgrounds
+$background-light: #fafafa;
+$background-dark: #000000;
+
+// Colors
+$color-text:#3897f0;
+
+// Borders
+$border-zero: 0;
+$border-color: #3897f0;
+$border-radius-4-p: 4px;
+$border-raduis-50-per: 50%;
+$border-sizing: border-box;
+
+// list-styles
+$list-style:  none;
+
+// Paragraph
+$text: 16px;
+// Titles
+$heading-one: 28px;
+$heading-two: 24px;
+$heding-three:22px;
+$heading-four:20px;
+
+
+* {
+  margin: $margin-zero;
+  padding: $padding-zero;
+  -webkit-box-sizing: $border-sizing;
+  -moz-box-sizing: $border-sizing;
+  box-sizing: $border-sizing;
+}
+
+html {
+  font-size: $text;
+}
+
+ul {
+	padding:$padding-zero;
+	margin:$margin-zero;
+}
+
+img {
+	border:$border-zero;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	background: $background-light;
+}
+
+main {
+	width: $width-center;
+	max-width: 935px;
+	margin: $margin-center;
+}
+
+header {
+	display: flex;
+	margin: 30px 0;
+	flex-flow: column;
+
+	.avatar {
+		-webkit-border-radius: $border-raduis-50-per;
+		-moz-border-radius: $border-raduis-50-per;
+		border-radius: $border-raduis-50-per;
+		margin: $margin-center;
+	}
+
+	.desc {
+		text-align: center;
+	}
+
+	h1, h2 {
+		display: inline-block;
+		margin:10px 0;
+	}
+
+	h1 {
+		font-size: $heading-one;
+	}
+
+	h2{
+		font-size: $heading-two;
+	}
+
+	.links{
+		list-style: $list-style;
+		margin: 10px 0;
+	}
+
+	.links li{
+		list-style: $list-style;
+		margin: 0 20px 0 0;
+		display: inline-block;
+	}
+}
+
+.btn-follow {
+	margin: 0 20px;
+	padding: 6px 14px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: $border-color;
+	color:$color-text;
+	border-radius: $border-radius-4-p;
+
+	&:hover {
+		background: $background-light;
+		color:$color-text;
+	}
+}
+
+.photos {
+	list-style: $list-style;
+	flex-wrap: wrap;
+	justify-content:space-between;
+	display:fex;
+
+	li {
+		width: $width-full;
+		margin: 20px 0;
+		position: relative;
+	}
+
+	li img {
+		width: $width-full;
+	}
+
+	li .img-hover{
+		opacity:0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: $width-full;
+		height: $height-full;
+		background: rgba(0,0,0,0.3);
+		transition: all 0.3s linear;
+	}
+
+	li:hover .img-hover{
+		opacity:1;
+	}
+}
+
+@media (min-width: 768px) {
+	header {
+		flex-flow: row;
+	}
+
+	header .avatar {
+		margin: 0 40px;
+	}
+
+	header .desc {
+		text-align: left;
+	}
+
+	.photos li {
+		width:30%;
+	}
+}
+

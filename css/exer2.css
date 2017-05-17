@@ -1,6 +1,3 @@
-/* TRABALHANDO COM SELETORES*/
-
-
 * {
   margin: 0;
   padding: 0;
@@ -64,8 +61,8 @@ header {
   color: #3897f0;
   border-radius: 4px; }
   .btn-follow:hover {
-    background: #3899f0;
-    color: #fff; }
+    background: #fafafa;
+    color: #3897f0; }
 
 .photos {
   list-style: none;
