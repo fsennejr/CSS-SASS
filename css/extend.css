@@ -1,0 +1,94 @@
+@charset "UTF-8";
+.btn, .btn-follow {
+  padding: 1.5rem;
+  border-width: 1rem;
+  border-style: solid;
+  border-radius: 50%; }
+
+.btn-follow {
+  color: #f4f4f4; }
+
+.btn-teste, .btn-follow-teste {
+  padding: 1.5rem;
+  border-width: 1rem;
+  border-style: solid;
+  border-radius: 50%; }
+
+.btn-follow-teste {
+  color: #f4f4f4; }
+
+body {
+  background: #64c864; }
+
+section {
+  background: rgba(100, 200, 100, 0.8); }
+
+section div {
+  background: white;
+  background: black;
+  font-family: "Open Sans";
+  font-weight: bold;
+  padding: 4;
+  font-family: "BOLD";
+  font-family: "bold";
+  width: 400%;
+  margin: 2;
+  margin: 3;
+  margin: 2; }
+
+div {
+  width: 50%; }
+
+h1 {
+  font-size: 32px;
+  font-size: 2rem; }
+
+/* Placeholders agrupam */
+div, p {
+  display: block;
+  margin: 0 auto; }
+
+/* Mixin não agrupa */
+section {
+  display: block;
+  margin: 0 auto; }
+
+p {
+  display: block;
+  margin: 0 auto; }
+
+header {
+  color: #000; }
+
+H1 {
+  font-size: 3rem; }
+
+H2 {
+  font-size: 2rem; }
+
+H3 {
+  font-size: 1rem; }
+
+.facebook-icon {
+  background-image: url("/images/social.png"); }
+
+.linkedin-icon {
+  background-image: url("/images/social.png"); }
+
+.Github-icon {
+  background-image: url("/images/social.png"); }
+
+.dog-icon {
+  background-image: url("/images/animal.png"); }
+
+.wolves-icon {
+  background-image: url("/images/animal.png"); }
+
+.lions-icon {
+  background-image: url("/images/animal.png"); }
+
+.item-4 {
+  width: 8em; }
+
+.item-2 {
+  width: 4em; }

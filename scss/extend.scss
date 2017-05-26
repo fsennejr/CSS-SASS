@@ -1,0 +1,185 @@
+.btn {
+	padding: 1.5rem;
+	border-width: 1rem;
+	border-style: solid;
+	border-radius: 50%;
+}
+
+.btn-follow {
+	@extend .btn;
+	color: #f4f4f4;
+}
+
+// Placeholders
+%btnTeste {
+	padding: 1.5rem;
+	border-width: 1rem;
+	border-style: solid;
+	border-radius: 50%;
+}
+
+.btn-teste {
+	@extend %btnTeste;
+}
+
+.btn-follow-teste{
+	@extend %btnTeste;
+	color: #f4f4f4;
+}
+
+
+// functions
+
+$red: 100;
+$green: 200;
+$blue: 100;
+$alpha: 0.8;
+$color: red;
+$amount: 80%;
+$font: Open Sans;
+$weight: "bold";
+$real_round: 2.2;
+$real: 2.5;
+
+body {
+	background: rgb($red, $green, $blue);
+}
+
+section {
+	background: rgba($red, $green, $blue, $alpha);
+}
+
+section div {
+	background: 	lighten($color, $amount);
+	background: 	darken($color, $amount);
+	font-family:	quote($font);
+	font-weight: 	unquote($weight);
+	padding: 		str-length($weight);
+	font-family: 	to-upper-case($weight);
+	font-family: 	to-lower-case($weight);
+	width: 			percentage(str-length($weight));
+	margin: 		round($real_round);
+	margin: 		ceil($real);
+	margin: 		floor($real);
+}
+
+
+@function calc-fluid($target, $container) {
+	$result:($target/$container) * 100%;
+	@return $result; 
+}
+
+
+div {
+	width: calc-fluid(500, 1000);
+}
+
+// Converter PX em Rem
+
+
+$size: 32;
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+@mixin fontSize($size) {
+  font-size: $size; //Fallback in px
+  font-size: calculateRem($size);
+}
+
+h1 {
+  @include fontSize(32px);
+}
+
+
+
+// Placeholders
+
+/* Placeholders agrupam */
+
+%center {
+	display:block;
+	margin:0 auto;
+}
+
+div {
+	@extend %center;
+}
+
+p {
+	@extend %center;
+}
+
+
+
+// Mixin
+
+/* Mixin não agrupa */
+
+@mixin center{
+	display: block;
+	margin: 0 auto;
+}
+
+section {
+	@include center;
+}
+
+p {
+	@include center;
+}
+
+
+// Control Directives - diretivas de controle
+$template: dark;
+// if
+header{
+	@if($template == dark) {
+		color: #000;
+	} @else if ($template == light){
+		color: #FFF;
+	} @else {
+		color: #ccc;	
+	}	
+}
+
+// for
+// poderia alterar Through por To
+// Through - até que o valor seja igual a 3
+
+// To - até que o valor seja menor que 3
+
+@for $i from 1 through 3 {
+	H#{$i} = {font-size: 4rem - $i}
+}
+
+
+// Each
+
+@each $social in facebook, linkedin, Github {
+	.#{$social}-icon {
+		background-image:url('/images/#{social}.png'); 
+	}
+}
+
+$animals: dog, wolves, lions;
+
+@each $animal in $animals {
+	.#{$animal}-icon {
+		background-image:url('/images/#{animal}.png'); 
+	}
+}
+
+// While
+
+$i: 4;
+
+@while $i > 0 {
+	.item-#{$i} {
+		width: 2em * $i;
+	}
+
+	$i: $i - 2;
+}
